@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  let userWins = 0;
+  let computerWins = 0;
+  let ties = 0;
+  let choices = ['rock', 'paper', 'scissors'];
+  for (let i = 1; i <= 10; i++) {
+    let userChoice = prompt(choices)
+    console.log(userChoice);
+    let computerChoice = choices[Math.floor(Math.random() * 2)];
+    console.log(computerChoice);
+    if (userChoice === 'rock' && computerChoice === 'scissors') {
+      alert('User Wins');
+      userWins++;
+    } else if (userChoice === 'rock' && computerChoice === 'paper') {
+      alert('Computer Wins');
+      computerWins++;
+    } else if (userChoice === 'rock' && computerChoice === 'rock') {
+      alert('Game is a tie, play again!');
+      ties++;
+    } else if (userChoice === 'paper' && computerChoice === 'rock') {
+      alert('User Wins');
+      userWins++;
+    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
+      alert('Computer Wins');
+      computerWins++;
+    } else if (userChoice === 'paper' && computerChoice === 'paper') {
+      alert('Game is a tie, play again!');
+      ties++;
+    } else if (userChoice === 'scissors' && computerChoice === 'rock') {
+      alert('Computer Wins!');
+      computerWins++;
+    } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+      alert('User Wins');
+      userWins++;
+    } else {
+      alert('Game is a tie, play again!')
+      ties++;
+    }
+  };
+  console.log(`User Wins: ${userWins}`);
+  console.log(`Computer Wins: ${computerWins}`);
+  console.log(`Number of Ties: ${ties}`);
+</script>
+
+</body>
+</html>

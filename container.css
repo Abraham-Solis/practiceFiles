@@ -1,0 +1,29 @@
+body {
+  background-color: #313715;
+}
+
+.container {
+  height: 100%;
+}
+
+.myHeader {
+  height: 200px;
+  background-color: #939F5C;
+  background-image: url(https://photobest1.com/wp-content/uploads/2018/04/free-download-jungle-wallpapers-hd-03.jpg);
+  background-size: cover;
+}
+
+.myColumn {
+  background-color: #E2F9B8;
+  height: 1029px;
+}
+
+.myMain {
+  background-color: #D16014;
+}
+
+.footer {
+  background-color: #939F5C;
+  height: 100px;
+}
+
