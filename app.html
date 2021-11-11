@@ -15,8 +15,8 @@
     <input type="text" name="number of episodes" id="number of episodes">
     <label for="main character">Main character</label>
     <input type="text" name="main character" id="main character">
-    <label for="director">director</label>
-    <input type="text" name="director" id="director">
+    <label for="Director">Director</label>
+    <input type="text" name="Director" id="Director">
 
   </p>    
   <p>
@@ -26,13 +26,59 @@
   </p>
 <script>
 
+  const tvList = [
+    {
+      show: 'Arcane',
+      episodes: '1' ,
+      character: 'Jinx'
+      
+     
+    },
+    {
+      show: 'Spongebob',
+      episodes: '248',
+      character: 'Spongebob & Patrick'
+    },
+    {
+      show: 'Friends',
+      episodes:'236',
+      character: 'Joey, Chandler, Ross, Monica, Rachel, Phoebe'
+    },
+    {
+      show: 'Game of Thrones ',
+      episodes: '73',
+      character:'Daenerys Targaryen, John Snow',
+    },
+    {
+      show: 'Breaking Bad',
+      episodes:'62',
+      character:'Waler White , Jesse Pinkman'
+    }
+
+      
+  ]
+
+  for (let i = 0; i < tvList.length; i++) {
+    let userElem = document.createElement('div')
+    userElem.innerHTML = `
+        <h1>${tvList[i].show}</h1>
+        <h2>${tvList[i].episodes}</h2>
+        <h3>${tvList[i].character}
+        <hr>
+      `
+    document.getElementById('Shows').append(userElem)
+  }
+
+
+
+
   document.getElementById('Submit').addEventListener('click', event => {
     event.preventDefault()
 
     console.log(document.getElementById('tvShow').value)
     console.log(document.getElementById('number of episodes').value)
     console.log(document.getElementById('main character').value)
-    console.log(document.getElementById('director').value)
+    console.log(document.getElementById('Director').value)
 
     let userElem = document.createElement('div')
     userElem.innerHTML = `
@@ -40,7 +86,7 @@
         <h3>${document.getElementById('number of episodes').value}</h3>
         <hr>
         <h3>${document.getElementById('main character').value}</h3>
-        <h3>${document.getElementById('director').value}</h3>
+        <h3>${document.getElementById('Director').value}</h3>
         <hr>
 
       `
@@ -49,11 +95,11 @@
     document.getElementById('tvShow').value = ''
     document.getElementById('number of episodes').value = ''
       document.getElementById('main character').value = ''
-    document.getElementById('director').value = ''
+    document.getElementById('Director').value = ''
 
     // document.getElementById('user').innerHTML = `
-    //   <h1>${document.getElementById('username').value}</h1>
-    //   <h2>${document.getElementById('password').value}</h2>
+    //   <h1>${document.getElementById('tvList').value}</h1>
+    //   <h2>${document.getElementById('tvList').value}</h2>
     // `
   })
 
