@@ -11,6 +11,8 @@
 <body>
   
   <h1>To Do list</h1>
+
+  <!-- form for userinputs -->
 <form>
   <p>
 
@@ -19,7 +21,7 @@
 
     </p>
 
-   
+   <!-- button to add to list -->
     <button id="add">AddtoList</button>
     <div id= "list"> </div>
 
@@ -27,7 +29,7 @@
 
 <script>
 
-
+// Creating Event Listner
 
 document.getElementById('add').addEventListener('click', event => {
       event.preventDefault()
@@ -55,6 +57,8 @@ document.getElementById('add').addEventListener('click', event => {
 
 
 })
+
+  //Buttons contain delete/clear all items/complete to change bgcolor to green(add prevent defualt to color to prevent refreshing page)
 
     document.addEventListener('click', event => {
         if (event.target.className === 'delete') {
