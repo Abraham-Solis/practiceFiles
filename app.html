@@ -61,9 +61,10 @@
   for (let i = 0; i < tvList.length; i++) {
     let userElem = document.createElement('div')
     userElem.innerHTML = `
-        <h1>${tvList[i].show}</h1>
-        <h2>${tvList[i].episodes}</h2>
-        <h3>${tvList[i].character}
+        <h3>${tvList[i].show}</h3>
+        <h3>${tvList[i].episodes}</h3>
+        <h3>${tvList[i].character}</h3>
+        <button class="delete">delete</button>
         <hr>
       `
     document.getElementById('Shows').append(userElem)
@@ -87,6 +88,7 @@
         <hr>
         <h3>${document.getElementById('main character').value}</h3>
         <h3>${document.getElementById('Director').value}</h3>
+        <button class="delete">delete</button>
         <hr>
 
       `
@@ -102,6 +104,18 @@
     //   <h2>${document.getElementById('tvList').value}</h2>
     // `
   })
+
+      document.addEventListener('click', event => {
+        if (event.target.className === 'delete') {
+          event.target.parentNode.remove()
+        }
+      })
+
+
+
+
+
+
 
 </script>
   
