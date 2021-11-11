@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+  <p>
+    <label for="tvShow">TV Show</label>
+    <input type="text" name="tvShow" id = "tvShow" > 
+    <label for="number of episodes">Num of episodes</label>
+    <input type="text" name="number of episodes" id="number of episodes">
+    <label for="main character">Main character</label>
+    <input type="text" name="main character" id="main character">
+    <label for="director">director</label>
+    <input type="text" name="director" id="director">
+
+  </p>    
+  <p>
+    <button id="Submit">Submit</button>
+    </form>
+    <div id= "Shows"></div>
+  </p>
+<script>
+
+  document.getElementById('Submit').addEventListener('click', event => {
+    event.preventDefault()
+
+    console.log(document.getElementById('tvShow').value)
+    console.log(document.getElementById('number of episodes').value)
+    console.log(document.getElementById('main character').value)
+    console.log(document.getElementById('director').value)
+
+    let userElem = document.createElement('div')
+    userElem.innerHTML = `
+        <h3>${document.getElementById('tvShow').value}</h3>
+        <h3>${document.getElementById('number of episodes').value}</h3>
+        <hr>
+        <h3>${document.getElementById('main character').value}</h3>
+        <h3>${document.getElementById('director').value}</h3>
+        <hr>
+
+      `
+    document.getElementById('Shows').append(userElem)
+
+    document.getElementById('tvShow').value = ''
+    document.getElementById('number of episodes').value = ''
+      document.getElementById('main character').value = ''
+    document.getElementById('director').value = ''
+
+    // document.getElementById('user').innerHTML = `
+    //   <h1>${document.getElementById('username').value}</h1>
+    //   <h2>${document.getElementById('password').value}</h2>
+    // `
+  })
+
+</script>
+  
+
+
+
+
+
+
+
+  </form>
+
+
+
+
+
+  
+</body>
+</html>
