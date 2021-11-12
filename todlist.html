@@ -8,13 +8,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
+<body style="text-align: center;">
   
   <h1>To Do list</h1>
 
   <!-- form for userinputs -->
-<form>
-  <p>
+
+    <form>
+  <p >
 
     <label for="items">Enter items</label>
     <input type="text" name="items" id="items">
@@ -23,13 +24,17 @@
 
    <!-- button to add to list -->
     <button id="add">AddtoList</button>
-    <div id= "list"> </div>
-
-</form>
+    <div style="text-align: right;" id= "list"> 
+    <button style="text-align: right;" id="clearall"> Clear All</button>
+    </div>
+    
+  </form>
+ 
 
 <script>
 
 // Creating Event Listner
+
 
 document.getElementById('add').addEventListener('click', event => {
       event.preventDefault()
@@ -43,7 +48,7 @@ document.getElementById('add').addEventListener('click', event => {
         <h3>${document.getElementById('items').value}</h3>
         <button class="complete">complete</button>
         <button class="delete">delete</button>
-        <button class="clearall">Clear All</button>
+        
         
         
     `
@@ -56,7 +61,8 @@ document.getElementById('add').addEventListener('click', event => {
 
 
 
-})
+  })
+
 
   //Buttons contain delete/clear all items/complete to change bgcolor to green(add prevent defualt to color to prevent refreshing page)
 
@@ -67,11 +73,18 @@ document.getElementById('add').addEventListener('click', event => {
       })
 
       
-  document.addEventListener('click', event => {
-    if (event.target.className === 'clearall') {
-      event.target.innerHTML.remove()
-    }
-  })
+        document.getElementById('clearall').addEventListener('click', event => {
+          event.innerHTML.emptystring()
+
+          // console.log(document.getElementById("clearall").value);
+
+        })
+
+  // document.addEventListener('click', event => {
+  //   if (event.target.className === 'clearall') {
+  //     event.target.innerHTML.emptystring()
+  //   }
+  // })
 
   document.addEventListener('click' , event =>{
     event.preventDefault()

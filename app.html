@@ -58,6 +58,8 @@
       
   ]
 
+  // to add from an array
+
   for (let i = 0; i < tvList.length; i++) {
     let userElem = document.createElement('div')
     userElem.innerHTML = `
@@ -92,6 +94,7 @@
         <hr>
 
       `
+      // to add new data
     document.getElementById('Shows').append(userElem)
 
     document.getElementById('tvShow').value = ''
