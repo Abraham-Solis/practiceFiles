@@ -27,7 +27,7 @@
     <div style="text-align: right;" id= "list"> 
     <button style="text-align: right;" id="clearall"> Clear All</button>
     </div>
-    
+
   </form>
  
 
@@ -48,6 +48,7 @@ document.getElementById('add').addEventListener('click', event => {
         <h3>${document.getElementById('items').value}</h3>
         <button class="complete">complete</button>
         <button class="delete">delete</button>
+        <button class ="clearall">ClearAll</button>
         
         
         
@@ -80,12 +81,7 @@ document.getElementById('add').addEventListener('click', event => {
 
         })
 
-  // document.addEventListener('click', event => {
-  //   if (event.target.className === 'clearall') {
-  //     event.target.innerHTML.emptystring()
-  //   }
-  // })
-
+ 
   document.addEventListener('click' , event =>{
     event.preventDefault()
     if(event.target.className === 'complete'){
