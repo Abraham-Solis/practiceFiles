@@ -13,3 +13,5 @@ const display = arr =>{
 }
 
 display(movie)
+
+module.exports = movie

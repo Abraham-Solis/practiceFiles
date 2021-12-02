@@ -1,6 +1,8 @@
 const fs =require('fs')
 
-fs.writeFile('example.txt', movie, err =>{
+const movie = require(`./movie.js`)
+
+fs.writeFile('example.txt', `${movie}` , err =>{
   if (err) {console.log(err)}
 
 })
