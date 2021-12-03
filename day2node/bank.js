@@ -21,14 +21,42 @@ const withdraw = (money) => {
 }
 
 
+// Bank Lotto Function
+
+const lottoNumber =
+
+  Math.floor(Math.random() * 49) + 1
+
+
+const lotto = () => {
+
+  if (lottoNumber <= 25) {
+    moneyFlow(deposit(10))
+  } else {
+    moneyFlow(withdraw(.25))
+  }
+}
+
+
+
+//Inputs
+
 const moneyFlow = (cashFlow, money) => {
   switch (cashFlow) {
     case 'deposit':
       deposit(money)
+      console.log(`Money Deposited!`)
       break
     case 'withdraw':
       withdraw(money)
+      console.log(`Money Withdrawn!`)
       break
+      case 'lotto':
+        lotto(lottoNumber)
+      console.log(`Good Luck!`)
+      break
+    case 'balance':
+      balance(cashFlow)
 
   }
 }
@@ -37,6 +65,26 @@ const moneyFlow = (cashFlow, money) => {
 moneyFlow(cashFlow, money)
 
 
-// Bank Lotto
 
-Math.floor(Math.random() *49) +1
+
+
+
+
+function balance(op) {
+  fs.readFile('bank.txt', 'utf8', (err, data) => {
+    const dataString = data.split(`,`);
+
+    let total = 0
+    for (let i = 0; i < dataString.length; i++) {
+      total += parseFloat(dataString[i]);
+
+
+    }
+
+    console.log(`Your Current Balance: $${total}`)
+    if (err) { console.log(err) }
+  })
+
+}
+
+  
