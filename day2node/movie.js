@@ -5,7 +5,7 @@ let title = process.argv[2]
 
 
 
-// Make a request for a user with a given ID
+// Make a request for a movie title 
 axios.get(`http://www.omdbapi.com/?apikey=trilogy&t=${title}`)
   .then(function (response) {
     // handle success
