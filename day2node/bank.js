@@ -70,7 +70,7 @@ moneyFlow(cashFlow, money)
 
 
 
-function balance(op) {
+function balance(cashFlow) {
   fs.readFile('bank.txt', 'utf8', (err, data) => {
     const dataString = data.split(`,`);
 
@@ -78,11 +78,13 @@ function balance(op) {
     for (let i = 0; i < dataString.length; i++) {
       total += parseFloat(dataString[i]);
 
-
     }
 
-    console.log(`Your Current Balance: $${total}`)
-    if (err) { console.log(err) }
+      console.log(`Your Current Balance: ${total}`)
+      if (err) { console.log(err) }
+    
+    
+   
   })
 
 }
