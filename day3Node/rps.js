@@ -54,7 +54,8 @@ const round = () =>{
           }
 
           count--
-          if (count >0){
+          
+          if (count > 0){
             round()
           } else{
             console.log(`

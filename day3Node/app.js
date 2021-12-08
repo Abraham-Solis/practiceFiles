@@ -29,9 +29,9 @@ function inventory() {
       Inventory
   ------------------
     Potions:
-    - ${potion1.name}
-        ${potion1.cost}
-        ${potion1.description}
+    - Name: ${potion1.name}
+      Cost: ${potion1.cost}
+      Description: ${potion1.description}
   
      -${potion2.name}
         ${potion2.cost}
